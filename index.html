@@ -3,7 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Perfect solution for small business">
+    <meta name="description" content="We release interesting articles about technology">
+
     <link
       rel="icon"
       href="resources/favicon.ico"
@@ -11,9 +12,11 @@
       sizes="96x96"
     />
 
-    <title>Business Blog Card | devChallenges.io</title>
+    <title>Simple Article Listing | devChallenges.io</title>
 
+    <!--You are welcome to delete these styles or modify them in your own stylesheet -->
     <style>
+
       * {
         margin: 0;
         padding: 0;
@@ -21,135 +24,146 @@
       }
 
       body {
+        background-color: #F8FAFC;
         height: 100vh;
         font-family: 'Poppins', sans-serif;
-        background-color: #F2F5F9;
+      }
+      /*main section*/
+      main{
+        padding: 7%;
         display: flex;
-        justify-content: center;
+        flex-direction: column;
         align-items: center;
+        text-align: center;
+        gap: 30px;
       }
-      /*card-container style*/
-      .card-container{
-        width: 380px;
-        height: 530px;
-        background-color: #fff;
-        border-radius: 10px;
+      h1{
+        font-size: 36px;
+      }
+      span{
+        color: #D9D9D9;
+        letter-spacing: 3px;
+        font-size: 22px;
+        font-weight: bold;
+      }
+      /*cards container*/
+      .cards{
         display: flex;
         flex-direction: column;
+        align-items: flex-start;
+        gap: 50px;
       }
-      .img-container{
-        height: 50%;
-        position: relative;
-      }
-      .details{
-        height: 50%;
-        padding: 2% 0;
+      /*cards*/
+      .card_items{
         display: flex;
         flex-direction: column;
-        gap: 15px;
-      }
-      .details h1{
-        font-size: 24px;
+        justify-content: center;
         line-height: 1.6;
-        color: #111729;
-        padding: 0 8%;
+        text-align: left;
+        gap: 20px;
       }
-      .details p{
-        line-height: 1.6;
-        color: #4A5567;
-        padding: 0 8%;
+      h3{
+        font-size: 20px;
       }
-      
-      hr{
-        border: 0;
-        border-top: 1px solid #F2F5F9;
-        margin: 5px 0;
+      .card_items p{
+        color: #4D5562;
+        font-size: 14px;
+        margin-top: 8px;
+      }
+      .card_items img{
+        border-radius: 20px;
+        width: 160px;
+        height: 160px;
       }
 
-      .details .info{
-        display: flex;
-        align-items: center;
-        gap: 15px;
-        padding: 0 8%;
+      /*screens from 1024px to 1349px*/
+      @media (min-width: 1024px) and (max-width: 1349px) {
+
+        /*main section*/
+      main{
+        padding: 5% 15%;
       }
-      .info h2{
-        font-size: 16px;
-        color: #111729;
-      }
-      .info small{
-        font-size: 16px;
-        color: #4A5567;
+      h1{
         line-height: 1.6;
       }
-      .info img{
-        border-radius: 50%;
-        border: #F2F5F9 solid 5px;
-        width: 50px;
-        height: 50px;
+      /*cards*/
+      .card_items{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 60px;
       }
-      .img-container .img1{
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        border-radius: 10px 10px 0 0;
-        z-index: 1;
+      .card_items p{
+        margin-top: 12px;
       }
-      .img-container #white-overlay{
-        position: absolute;
-        width: 100%;
-        top: 80%;
-        z-index: 100;
+      .card_items img{
+        border-radius: 20px;
+        width: 160px;
+        height: 160px;
       }
-        /*screens from 1024px to 1349px*/
-      
-      @media (min-width: 1024px) and (max-width: 1349px) {
-        .card-container{
-          width: 42%;
-          height: 540px;
-        }
       }
 
       /* wider than 1350px screens*/
       @media (min-width: 1350px) {
-        .card-container{
-          width: 33%;
-          height: 540px;
-        }
+        /*main section*/
+      
+      main{
+        padding: 3% 23%;
       }
-
+      h1{
+        line-height: 1.6;
+      }
+      /*cards*/
+      .card_items{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 60px;
+      }
+      .card_items p{
+        margin-top: 12px;
+      }
+      .card_items img{
+        border-radius: 12px;
+        width: 160px;
+        height: 160px;
+      }
+      }
     </style>
   </head>
   <body>
-  <div class="card-container">
-    <!-- card container -->
-    <div class="img-container">
-      <picture>
-        <!-- الصورة دي هتظهر لو العرض أكبر من 800px -->
-        <source media="(min-width: 800px)" srcset="resources/hero-image-1.jpg">
-        
-        <!-- الصورة الافتراضية -->
-        <img class="img1" src="resources/hero-image.jpg" alt="Responsive Image">
-      </picture>
-      <img id="white-overlay" src="resources/white-overlay.svg" alt="white-overlay">
-    </div>
-    <div class="details">
-      <h1>Perfect solution for small business</h1>
-      <p>Small businesses need to generate leads to grow. You can use tools like Ringy.</p>
-      <hr>
-      <div class="info">
-        <picture>
-          <!-- الصورة دي هتظهر لو العرض أكبر من 800px -->
-          <source media="(min-width: 800px)" srcset="resources/avatar-image-business-card.png">
-          
-          <!-- الصورة الافتراضية -->
-          <img src="resources/avatar-image-business-card-1.png" alt="Responsive Image">
-        </picture>
-        <div>
-          <h2>Amy Burgess</h2>
-          <small>Customer Manger, Solution Oy</small>
+    
+    <main>
+      <h1>We release interesting articles about technology</h1>
+      <span>///////////////////</span>
+      <div class="cards">
+        <div class="card_items">
+          <img src="resources/photo_1.png" alt="the Power of Cloud Computing">
+          <div>
+            <h3>Unlocking the Power of Cloud Computing:A Guide to Scalable Solutions</h3>
+            <p>November 12, 2024</p>
+          </div>
         </div>
+
+        <div class="card_items">
+          <img src="resources/photo_3.png" alt="The Future of AI">
+          <div>
+            <h3>The Future of AI : How Machine Learning is Revolutionizing Industries</h3>
+            <p>November 12, 2024</p>
+          </div>
+        </div>
+
+        <div class="card_items">
+          <img src="resources/photo_2.png" alt="the Power of Cloud Computing">
+          <div>
+            <h3>The Impact of 5G on Business : How Faster Networks are Transforming the Way We Work</h3>
+            <p>November 12, 2024</p>
+          </div>
+        </div>
+
       </div>
-    </div>
-  </div>
+    </main>
   </body>
 </html>
