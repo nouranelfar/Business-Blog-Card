@@ -3,21 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Quality feedbacks for your SaaS products">
-
+    <meta name="description" content="Perfect solution for small business">
     <link
       rel="icon"
       href="resources/favicon.ico"
       type="image/x-icon"
       sizes="96x96"
     />
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
 
-    <title>Simple Feature Section | devChallenges.io</title>
+    <!--optemize loading-->
+    <link rel="preload" as="image" href="resources/hero-image.jpg">
 
-    <link rel="preload" as="image" href="resources/photo_1.png">
-    <link rel="preload" as="image" href="resources/photo_2.png">
-    <link rel="preload" as="image" href="resources/photo_3.png">
+    <title>Business Blog Card | devChallenges.io</title>
 
     <style>
       * {
@@ -25,164 +22,138 @@
         padding: 0;
         box-sizing: border-box;
       }
+
       body {
         height: 100vh;
-        background: url("resources/Background_image.svg") #121826;
-        font-family: "Outfit", sans-serif;
+        font-family: 'Poppins', sans-serif;
+        background-color: #F2F5F9;
       }
       main{
-        height: 100%;
-        padding: 10% 5%;
         display: flex;
         justify-content: center;
         align-items: center;
-        flex-direction: column;
-        gap: 40px;
+        height: 100%;
       }
-
-      /*Heading styles*/
-      main .details{
-        text-align: center;
+      /*card-container style*/
+      .card-container{
+        width: 380px;
+        height: 530px;
+        background-color: #fff;
+        border-radius: 10px;
         display: flex;
         flex-direction: column;
-        gap: 10px;
       }
-      main .details h1{
-        font-size: 40px;
-        color: #E5E7EB;
-        width: 400px;
-        align-self: center;
-        font-weight: 600;
-        line-height: 1.4;
+      .img-container{
+        height: 50%;
+        position: relative;
       }
-      main .details p{
-        color: #9DA3AE;
-        font-size: 16px;
-        font-weight: 400;
-        line-height: 1.4;
-      }
-
-      /*cards styles*/
-      main .cards-container{
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 40px;
-      }
-      main .crad-items{
-        width: 315px;
-        background-color: #212936;
-        /* Box-shadow */
-        box-shadow: 0px 30px 100px 0px rgba(17, 23, 41, 0.15);
-        flex-shrink: 0;
-        flex-grow: 0;
-        padding: 20px 25px;
-        border-radius: 12px;
+      .details{
+        height: 50%;
+        padding: 2% 0;
         display: flex;
         flex-direction: column;
         gap: 15px;
       }
-      main .crad-items .sticker{
-        background-color: #DEE9FC;
-        padding: 15px;
-        flex-grow: 0;
+      .details h1{
+        font-size: 24px;
+        line-height: 1.6;
+        color: #111729;
+        padding: 0 8%;
+      }
+      .details p{
+        line-height: 1.6;
+        color: #4A5567;
+        padding: 0 8%;
+      }
+      
+      hr{
+        border: 0;
+        border-top: 1px solid #F2F5F9;
+        margin: 5px 0;
+      }
+
+      .details .info{
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        padding: 0 8%;
+      }
+      .info h2{
+        font-size: 16px;
+        color: #111729;
+      }
+      .info small{
+        font-size: 16px;
+        color: #4A5567;
+        line-height: 1.6;
+      }
+      .info img{
+        border-radius: 50%;
+        border: #F2F5F9 solid 5px;
         width: 50px;
         height: 50px;
-        border-radius: 50%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        object-fit: cover;
       }
-      main .crad-items .sticker p{
-        font-size: 20px;
+      .img-container .img1{
+        object-fit: cover;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 10px 10px 0 0;
+        z-index: 1;
       }
-      main .crad-items img{
-        border-radius: 10px;
-        width: 267px;
-        height: 193px;
+      .img-container #white-overlay{
+        position: absolute;
+        width: 100%;
+        top: 80%;
+        z-index: 100;
       }
-      .crad-items h2{
-        color: #E5E7EB;
-        font-size: 20px;
-        line-height: 1.2;
-        font-weight: 600;
-      }
-      .crad-items p{
-        color: #9DA3AE;
-        font-size: 16px;
-        line-height: 1.2;
-        font-weight: 400;
-      }
-      #color1{
-        background-color: #FCEED8;
-      }
-      #color3{
-        background-color: #FBE5E6;
+        /*screens from 1024px to 1349px*/
+      
+      @media (min-width: 1024px) and (max-width: 1349px) {
+        .card-container{
+          width: 42%;
+          height: 550px;
+        }
+        
+        .details{
+        padding: 4% 0;
+        }
       }
 
-      /*screens from 1024px to 1349px*/
-      @media (min-width: 1024px) and (max-width: 1349px) {
-        body {
-          background: url("resources/Background_image@2x.png") #121826;
-        }
-        main{
-        padding: 20px 40px;
-        }
-        main .details h1{
-        width: 450px;
-        }
-      }
       /* wider than 1350px screens*/
       @media (min-width: 1350px) {
-        body {
-          background: url("resources/Background_image@3x.png") #121826;
+        .card-container{
+          width: 33%;
+          height: 538px;
         }
-        main{
-        padding: 20px;
-        }
-        main .details h1{
-        width: 420px;
-        }
-      }
-
+    }
     </style>
-
   </head>
   <body>
     <main>
-      <div class="details">
-        <h1>Quality feedbacks for your SaaS products</h1>
-        <p>The blocks & components you need</p>
-      </div>
-      <div class="cards-container">
-        <div class="crad-items">
-          <div class="sticker" id="color1"><p>✋</p></div>
-          <h2>Collect Feedback at Multiple Touchpoints</h2>
-          <p>Provide a comprehensive understanding of the customer experience.</p>
+      <div class="card-container">
+        <!-- card container -->
+        <div class="img-container">
           <picture>
-            <img loading="eager" src="resources/photo_2.png?v=1.0" alt="photo_2">
-            <source src="resources/photo_2@2x.png" type="image/jpg">
+            <img class="img1" src="resources/hero-image-1.jpg?v=1.0" fetchpriority=high loading="eager" alt="Responsive Image">
+            <source srcset="resources/hero-image.jpg" type="image/jpg">
           </picture>
-        </div>
 
-        <div class="crad-items">
-          <div class="sticker"><p>🥅</p></div>
-          <h2>Ask Targeted and Specific Questions</h2>
-          <p>Avoid vague or open-ended questions that may not yield actionable insights.</p>
-          <picture>
-            <img loading="eager" src="resources/photo_1.png?v=1.0" alt="photo_1">
-            <source src="resources/photo_1@2x.png" type="image/jpg">
-          </picture>
+          <img id="white-overlay" src="resources/white-overlay.svg" alt="white-overlay">
         </div>
-
-        <div class="crad-items">
-          <div class="sticker" id="color3"><p>💬</p></div>
-          <h2>Prioritize and Respond to Feedback</h2>
-          <p>Communicate the changes or improvements you've made in response to their feedback.</p>
-          <picture>
-            <img loading="eager" src="resources/photo_3.png?v=1.0" alt="photo_1">
-            <source src="resources/photo_3@2x.png" type="image/jpg">
-          </picture>
+        <div class="details">
+          <h1>Perfect solution for small business</h1>
+          <p>Small businesses need to generate leads to grow. You can use tools like Ringy.</p>
+          <hr>
+          <div class="info">
+              <img src="resources/avatar-image-business-card-1.png" alt="Responsive Image">
+            <div>
+              <h2>Amy Burgess</h2>
+              <small>Customer Manger, Solution Oy</small>
+            </div>
+          </div>
         </div>
       </div>
     </main>
